@@ -6,6 +6,9 @@ let count = 0;
 let player1 = [];
 let player2 = [];
 
+let p1=0;
+let p2=0;
+
 // Game Start Button
 start.addEventListener("click", (event) => {
   start.innerText = "STARTED";
@@ -23,6 +26,7 @@ start.addEventListener("click", (event) => {
         player1.push(btn.id);
         player1.sort();
         console.log(player1);
+        p1++;
       }
       // Player 2
       else {
@@ -32,6 +36,7 @@ start.addEventListener("click", (event) => {
         player2.push(btn.id);
         player2.sort();
         console.log(player2);
+        p2++;
       }
 
       // Winning Number Comparison With Player Data
@@ -65,6 +70,11 @@ start.addEventListener("click", (event) => {
         } else if (no2 == 3) {
           start.innerText = "P-'O' WIN";
           restart();
+        } else if(p1==5){
+          if (p2=4) {
+            start.innerHTML = "Tie";
+            restart();
+          }
         }
       }
     });
